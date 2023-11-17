@@ -59,17 +59,17 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://passwordreset-0t0v.onrender.com/login', formData);
+      const response = await axios.post('https://backend-reset.onrender.com/login', formData);
       if (response.status === 200) {
         console.log('Login successful');
         console.log(response.data);
-        localStorage.setItem('token', response.data); // Store the token in local storage
+        localStorage.setItem('token', response.data); 
 
         navigate('/profile');
       }
     } catch (error) {
       console.error('Error:', error);
-      setErrorMessage('Invalid email or password. Please try again.'); // Set the error message
+      setErrorMessage('Invalid email or password. Please try again.'); 
     }
   };
 
@@ -100,7 +100,7 @@ function Login() {
         <button type="submit" style={buttonStyle}>
           Login
         </button>
-        {errorMessage && <p style={errorStyle}>{errorMessage}</p>} {/* Display error message */}
+        {errorMessage && <p style={errorStyle}>{errorMessage}</p>} 
       </form>
       <Link to="/forgetpassword">Forgot Password?</Link>
     </div>

@@ -28,11 +28,11 @@ function Profile() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   
-  // Function to handle logout
+ 
   const handleLogout = () => {
-    // Clear the token from local storage
+    
     localStorage.removeItem('token');
-    // Navigate to the signup page
+   
     navigate('/signup');
   };
 
@@ -40,7 +40,7 @@ function Profile() {
     const token = localStorage.getItem('token');
 
     axios
-      .get('https://passwordreset-0t0v.onrender.com/profile', {
+      .get('https://backend-reset.onrender.com/profile', {
         headers: {
           Authorization: `${token}`,
         },
@@ -59,8 +59,8 @@ function Profile() {
       <h1>User Profile</h1>
       <p>Name: {userData.fname}</p>
       <p>Email: {userData.email}</p>
-      <button style={buttonStyle} onClick={handleLogout}>Logout</button> {/* Logout button */}
-      <Link to="/signup" style={linkStyle}>Return to Signup</Link> {/* Link to Signup page */}
+      <button style={buttonStyle} onClick={handleLogout}>Logout</button> 
+      <Link to="/signup" style={linkStyle}>Return to Signup</Link> 
     </div>
   );
 }

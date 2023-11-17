@@ -60,7 +60,7 @@ function ResetPassword() {
     }
 
     try {
-      const response = await axios.post(`https://passwordreset-0t0v.onrender.com/reset-password/${token}`, {
+      const response = await axios.post(`https://backend-reset.onrender.com/reset-password/${token}`, {
         newPassword,
       });
 

@@ -59,7 +59,7 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://passwordreset-0t0v.onrender.com/users',
+        'https://backend-reset.onrender.com/users',
         formData
       );
       console.log(response, 'res');

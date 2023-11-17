@@ -48,8 +48,10 @@ function ForgetPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const response = await axios.post('https://passwordreset-0t0v.onrender.com/forgetpassword', formData);
+      alert("password has been sent succesfully")
+      const response = await axios.post('https://backend-reset.onrender.com/forgetpassword', formData);
 
       console.log(response, "res");
 
